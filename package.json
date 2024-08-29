@@ -1,0 +1,78 @@
+{
+  "name": "projectswitch",
+  "displayName": "ProjectSwitch",
+  "description": "A fast overview to switch between projects via shortcuts",
+  "version": "0.0.1",
+  "author": "Simon Kramer",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/username/projectswitch"
+  },
+  "engines": {
+    "vscode": "^1.92.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "main": "./out/extension.js",
+  "activationEvents": [
+    "onCommand:projectSwitcher.switchProject",
+    "onCommand:projectSwitcher.manageProjects",
+    "onCommand:projectSwitcher.openWebOverview"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "projectSwitcher.switchProject",
+        "title": "Switch to Project"
+      },
+      {
+        "command": "projectSwitcher.manageProjects",
+        "title": "Manage Projects in the Project Switcher"
+      },
+      {
+        "command": "projectSwitcher.openWebOverview",
+        "title": "Project Switcher: Overview"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "projectSwitcher.switchProject",
+        "key": "ctrl+shift+u",
+        "mac": "cmd+shift+u",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "projectSwitcher.manageProjects",
+        "key": "ctrl+shift+i",
+        "mac": "cmd+shift+i",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "projectSwitcher.openWebOverview",
+        "key": "ctrl+shift+w",
+        "mac": "cmd+shift+w",
+        "when": "editorTextFocus"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.92.0",
+    "@types/mocha": "^10.0.7",
+    "@types/node": "20.x",
+    "@typescript-eslint/eslint-plugin": "^7.14.1",
+    "@typescript-eslint/parser": "^7.11.0",
+    "eslint": "^8.57.0",
+    "typescript": "^5.4.5",
+    "@vscode/test-cli": "^0.0.9",
+    "@vscode/test-electron": "^2.4.0"
+  }
+}
