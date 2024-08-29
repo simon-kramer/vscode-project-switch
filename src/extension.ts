@@ -669,7 +669,6 @@ function openWebOverview(context: vscode.ExtensionContext) {
             <button class="vscode-button" onclick="addGroup()">Add New Group</button>
         </div>
         ${groupsHTML}
-        <script>
             <script>
                 const vscode = acquireVsCodeApi();
     
