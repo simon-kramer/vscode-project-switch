@@ -5,6 +5,7 @@
   "version": "0.0.1",
   "license": "MIT",
   "author": "Simon Kramer",
+  "publisher": "SimonKramer",
   "repository": {
     "type": "git",
     "url": "https://github.com/simon-kramer/vscode-project-switch"
