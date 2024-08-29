@@ -3,10 +3,11 @@
   "displayName": "ProjectSwitch",
   "description": "A fast overview to switch between projects via shortcuts",
   "version": "0.0.1",
+  "license": "MIT",
   "author": "Simon Kramer",
   "repository": {
     "type": "git",
-    "url": "https://github.com/username/projectswitch"
+    "url": "https://github.com/simon-kramer/vscode-project-switch"
   },
   "engines": {
     "vscode": "^1.92.0"
