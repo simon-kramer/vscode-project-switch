@@ -2,7 +2,7 @@
   "name": "projectswitch",
   "displayName": "ProjectSwitch",
   "description": "A fast overview to switch between projects via shortcuts",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "license": "MIT",
   "author": "Simon Kramer",
   "publisher": "SimonKramer",
@@ -18,42 +18,59 @@
   ],
   "main": "./out/extension.js",
   "activationEvents": [
-    "onCommand:projectSwitcher.switchProject",
-    "onCommand:projectSwitcher.manageProjects",
-    "onCommand:projectSwitcher.openWebOverview"
+    "onCommand:projectSwitch.switchProject",
+    "onCommand:projectSwitch.manageProjects",
+    "onCommand:projectSwitch.openWebOverview"
   ],
   "contributes": {
     "commands": [
       {
-        "command": "projectSwitcher.switchProject",
+        "command": "projectSwitch.switchProject",
         "title": "Switch to Project"
       },
       {
-        "command": "projectSwitcher.manageProjects",
-        "title": "Manage Projects in the Project Switcher"
+        "command": "projectSwitch.manageProjects",
+        "title": "Manage Projects in the Project Switch"
       },
       {
-        "command": "projectSwitcher.openWebOverview",
-        "title": "Project Switcher: Overview"
+        "command": "projectSwitch.openWebOverview",
+        "title": "Project Switch: Overview"
       }
     ],
+    "configuration": {
+      "title": "Project Switch",
+      "properties": {
+        "projectSwitch.switchProjectKeybinding": {
+          "type": "string",
+          "default": "ctrl+shift+u",
+          "description": "Keybinding to switch projects"
+        },
+        "projectSwitch.manageProjectsKeybinding": {
+          "type": "string",
+          "default": "ctrl+shift+i",
+          "description": "Keybinding to manage projects"
+        },
+        "projectSwitch.openWebOverviewKeybinding": {
+          "type": "string",
+          "default": "ctrl+shift+w",
+          "description": "Keybinding to open web overview"
+        }
+      }
+    },
     "keybindings": [
       {
-        "command": "projectSwitcher.switchProject",
-        "key": "ctrl+shift+u",
-        "mac": "cmd+shift+u",
+        "command": "projectSwitch.switchProjectWithKeybinding",
+        "key": "${config:projectSwitch.switchProjectKeybinding}",
         "when": "editorTextFocus"
       },
       {
-        "command": "projectSwitcher.manageProjects",
-        "key": "ctrl+shift+i",
-        "mac": "cmd+shift+i",
+        "command": "projectSwitch.manageProjectsWithKeybinding",
+        "key": "${config:projectSwitch.manageProjectsKeybinding}",
         "when": "editorTextFocus"
       },
       {
-        "command": "projectSwitcher.openWebOverview",
-        "key": "ctrl+shift+w",
-        "mac": "cmd+shift+w",
+        "command": "projectSwitch.openWebOverviewWithKeybinding",
+        "key": "${config:projectSwitch.openWebOverviewKeybinding}",
         "when": "editorTextFocus"
       }
     ]
